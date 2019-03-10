@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <listener>
+    <listener-class>org.apache.axis.transport.http.AxisHTTPSessionListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.crypto.servlet.StartUp</listener-class>
+  </listener>
+  <mime-mapping>
+    <extension>wsdl</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>xsd</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/pages/error.jsp</location>
+  </error-page>
+  
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/injection?allowMultiQueries=true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbuser</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbpass</param-name>
+    <param-value>mysql</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>select</param-name>
+    <param-value>a554eb8da81aa0a390afffeb51bef832acd0c5e3</param-value>
+  </context-param>
+  <context-param>
+    <param-name>delete</param-name>
+    <param-value>89e4bde2f8af394b8919edf978fbefe6657e58b0</param-value>
+  </context-param>
+  <context-param>
+    <param-name>insert</param-name>
+    <param-value>154c30e1acc113bc7f387145a658d9a5f0f7a8d6</param-value>
+  </context-param>
+  <context-param>
+    <param-name>update</param-name>
+    <param-value>71c60803e15691ee62e0df5ec27250f49b8ca14a</param-value>
+  </context-param>
+  
+</web-app>
